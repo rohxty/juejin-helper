@@ -229,12 +229,13 @@ class MockVisitTask extends Task {
 class CheckIn {
   cookie = "";
   username = "";
-
+  
   constructor(cookie) {
     this.cookie = cookie;
   }
 
   async run() {
+    console.log('env',env)
     const juejin = new JuejinHelper();
     try {
       await juejin.login(this.cookie);
@@ -317,7 +318,7 @@ ${this.lotteriesTask.lotteryCount > 0 ? "==============\n" + drawLotteryHistory 
 }
 
 async function run(args) {
-  console.log('env',env)
+  
   const cookies = utils.getUsersCookie(env);
   let messageList = [];
   for (let cookie of cookies) {
