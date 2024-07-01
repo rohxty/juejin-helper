@@ -317,6 +317,7 @@ ${this.lotteriesTask.lotteryCount > 0 ? "==============\n" + drawLotteryHistory 
 }
 
 async function run(args) {
+  console.log('env',env)
   const cookies = utils.getUsersCookie(env);
   let messageList = [];
   for (let cookie of cookies) {
